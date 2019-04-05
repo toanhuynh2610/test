@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>New Movie</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magenest\Movie\Block\ShowMovie"
+                   name="new_movie" template="Magenest_Movie::showmovie.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
+
