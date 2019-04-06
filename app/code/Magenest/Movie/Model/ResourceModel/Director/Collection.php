@@ -7,7 +7,7 @@
  * Time: 13:11
  */
 
-namespace Magenest\Movie\Model\ResourceModel\Movie;
+namespace Magenest\Movie\Model\ResourceModel\Director;
 /**
  * Subscription Collection
  */

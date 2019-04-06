@@ -14,11 +14,11 @@ class Collection extends \Magento\Framework\App\Action\Action {
 //          ->addAttributeToFilter('name', array('like' => '%G%'))
             ->setPageSize(10,1);
         $output = '';
-        //$output = $productCollection->getSelect()->__toString();
-        foreach ($productCollection as $product) {
-            $output .= \Zend_Debug::dump($product["name"], null,
-                false);
-        }
+        $output = $productCollection->count('*');
+//        foreach ($productCollection as $product) {
+//            $output .= \Zend_Debug::dump($product["name"], null,
+//                false);
+//        }
         $this->getResponse()->setBody($output);
     }
 }
