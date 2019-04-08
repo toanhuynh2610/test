@@ -37,7 +37,7 @@ define([
 
                 $.extend(true, $, {
                     calendarConfig: {
-                        showOn: 'button',
+                        showOn: 'Magenest.Movie.view.adminhtml.templates.system.config.button',
                         showAnim: '',
                         buttonImageOnly: true,
                         showButtonPanel: true,
@@ -51,7 +51,7 @@ define([
 
                 $calendar = $(calendarSelector).calendar();
 
-                expect($calendar.calendar('option', 'showOn')).toBe('button');
+                expect($calendar.calendar('option', 'showOn')).toBe('Magenest.Movie.view.adminhtml.templates.system.config.button');
                 expect($calendar.calendar('option', 'showAnim')).toBe('');
                 expect($calendar.calendar('option', 'buttonImageOnly')).toBe(true);
                 expect($calendar.calendar('option', 'showButtonPanel')).toBe(true);

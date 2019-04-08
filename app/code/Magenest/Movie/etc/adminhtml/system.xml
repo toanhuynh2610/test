@@ -33,17 +33,29 @@
                 </field>
                 <field id="movie_row" translate="label"
                        type="text" sortOrder="4" showInDefault="1"
-                       showInWebsite="1" showInStore="1">
+                       showInWebsite="1" showInStore="1" >
                     <label>Rows in table “magenest_movie”</label>
                     <frontend_model>Magenest\Movie\Model\Config\Frontend\Disable</frontend_model>
                     <backend_model>Magenest\Movie\Model\Config\Backend\Movierow</backend_model>
+                    <depends>
+                        <field id="show_notshow">1</field>
+                    </depends>
                 </field>
                 <field id="actor_row" translate="label"
-                       type="text" sortOrder="4" showInDefault="1"
+                       type="text" sortOrder="5" showInDefault="1"
                        showInWebsite="1" showInStore="1">
                     <label>Rows in table “actor_movie”</label>
-                        <frontend_model>Magenest\Movie\Model\Config\Frontend\Disable</frontend_model>
+
+                    <frontend_model>Magenest\Movie\Model\Config\Frontend\Disable</frontend_model>
                     <backend_model>Magenest\Movie\Model\Config\Backend\Actorrow</backend_model>
+                </field>
+                <field id="button_field" translate="label"
+                       type="button" sortOrder="6" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Button field</label>
+
+                    <frontend_model>Magenest\Movie\Block\System\Config\Button</frontend_model>
+<!--                    <backend_model>Magenest\Movie\Model\Config\Backend\Actorrow</backend_model>-->
                 </field>
             </group>
         </section>

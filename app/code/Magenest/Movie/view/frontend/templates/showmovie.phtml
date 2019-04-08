@@ -1,17 +1,17 @@
 <h2>Watch movie!</h2>
 
 <table>
-    <tr>
+    <tr style="border-bottom:1pt solid #cecece">
         <td><b>Movie Name</b></td>
         <td><b>Director</b></td>
         <td><b>Actors</b></td>
     </tr>
     <?php foreach ($block->getMovie() as $movie): ?>
-    <tr>
+    <tr style="border-bottom:1pt solid #cecece">
         <td><?php echo $movie['name'] ?></td>
         <td><?php echo $movie['dname'] ?></td>
         <td>
-            <ul>
+            <ul style="list-style:none; padding-inline-start: 0px;">
                 <?php foreach ($block->getActor($movie['movie_id']) as $actor): ?>
                     <li> <?php echo $actor['aname'] ?>
                     </li>
