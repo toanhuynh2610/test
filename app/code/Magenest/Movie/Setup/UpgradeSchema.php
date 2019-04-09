@@ -13,7 +13,7 @@ class UpgradeSchema implements UpgradeSchemaInterface {
     public function upgrade(SchemaSetupInterface $setup,
                             ModuleContextInterface $context)
     {
-        if (version_compare($context->getVersion(), '2.0.8') < 0) {
+        if (version_compare($context->getVersion(), '2.0.9') < 0) {
             $installer = $setup;
             $installer->startSetup();
             /*CREATE MAGENEST_DIRECTOR*/
@@ -112,15 +112,6 @@ class UpgradeSchema implements UpgradeSchemaInterface {
 
             $table = $installer->getConnection()->newTable(
                 $installer->getTable('magenest_movie_actor')
-            )->addColumn(
-                'id',
-                \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
-                null, [
-                'identity' => true,
-                'unsigned' => true,
-                'nullable' => false,
-                'primary' => true],
-                'ID'
             )->addColumn(
                 'movie_id',
                 \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,

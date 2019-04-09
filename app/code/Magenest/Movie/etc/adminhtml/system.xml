@@ -22,7 +22,8 @@
                 <field id="yes_no_abcd" translate="label"
                        type="select" sortOrder="2" showInDefault="1"
                        showInWebsite="1" showInStore="1">
-                    <label>Yes/No_Field_abcd</label>
+                    <label>Yes/No_Field_</label>
+                    <frontend_model>Magenest\Movie\Model\Config\Frontend\Color</frontend_model>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="show_notshow" translate="label"

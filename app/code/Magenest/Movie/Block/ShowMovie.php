@@ -14,18 +14,18 @@ use Magento\Framework\View\Element\Template;
 class ShowMovie extends Template
 {
     private $_movieCollectionFactory;
-    private $_moacCollectionFactory;
+    private $_actorCollectionFactory;
     public function __construct(
         Template\Context $context,
         \Magenest\Movie\Model\ResourceModel\Movie\
         CollectionFactory $movieCollectionFactory,
-        \Magenest\Movie\Model\ResourceModel\MoAc\
-        CollectionFactory $moacCollectionFactory,
+        \Magenest\Movie\Model\ResourceModel\Actor\
+        CollectionFactory $actorCollectionFactory,
         array $data = [])
     {
         parent::__construct($context, $data);
         $this->_movieCollectionFactory = $movieCollectionFactory;
-        $this->_moacCollectionFactory = $moacCollectionFactory;
+        $this->_actorCollectionFactory = $actorCollectionFactory;
     }
     public function getMovie()
     {
@@ -39,12 +39,16 @@ class ShowMovie extends Template
     }
     public function getActor($a){
         $int = (int)$a;
-        $collection = $this->_moacCollectionFactory->create();
-        $collection->AddFieldToFilter('movie_id',$int);
+        $collection = $this->_actorCollectionFactory->create();
         $collection->getSelect()->join(
-            ['magenest_actor'=>$collection->getTable('magenest_actor')],
-            'main_table.actor_id = magenest_actor.actor_id',
-            ['aname'=>'magenest_actor.name']);
+            ['magenest_movie_actor'=>$collection->getTable('magenest_movie_actor')],
+            'main_table.actor_id = magenest_movie_actor.actor_id',
+            ['aname'=>'main_table.name'])
+            ->join(
+                ['magenest_movie'=>$collection->getTable('magenest_movie')],
+                'magenest_movie_actor.movie_id = magenest_movie.movie_id',
+                ['aname'=>'main_table.name']);;
+        $collection->AddFieldToFilter('magenest_movie.movie_id',$int);
         return $collection;
     }
 }

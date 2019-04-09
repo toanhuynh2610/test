@@ -3,13 +3,20 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Magento_Backend::stores">
-                    <resource id="Magento_Backend::stores_settings">
-                        <resource id="Magento_Config::config">
-                            <resource id="Magenest_Movie::config_movie" title="Movie" />
-                        </resource>
+                <resource id="Magenest_Movie::magenest" title="Magenest">
+                    <resource id="Magenest_Movie::index" title="Index">
+                        <resource id="Magenest_Movie::movie" title="Movie"></resource>
+                        <resource id="Magenest_Movie::actor" title="Actor"></resource>
+                        <resource id="Magenest_Movie::director" title="Director"></resource>
                     </resource>
                 </resource>
+                    <resource id="Magento_Backend::stores">
+                        <resource id="Magento_Backend::stores_settings">
+                            <resource id="Magento_Config::config">
+                                <resource id="Magenest_Movie::config_movie" title="Movie" />
+                            </resource>
+                        </resource>
+                    </resource>
             </resource>
         </resources>
     </acl>

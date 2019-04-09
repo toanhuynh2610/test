@@ -107,15 +107,6 @@ class InstallSchema implements InstallSchemaInterface
         $table = $installer->getConnection()->newTable(
             $installer->getTable('magenest_movie_actor')
         )->addColumn(
-            'id',
-            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
-            null, [
-            'identity' => true,
-            'unsigned' => true,
-            'nullable' => false,
-            'primary' => true],
-            'ID'
-        )->addColumn(
             'movie_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
             null,
