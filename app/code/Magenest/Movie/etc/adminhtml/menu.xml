@@ -30,6 +30,7 @@
                 title="Actor"
                 module="Magenest_Movie"
                 sortOrder="25"
+                action="movie/actor"
                 parent="Magenest_Movie::index"
                 resource="Magenest_Movie::actor"
         />
@@ -38,6 +39,7 @@
                 title="Director"
                 module="Magenest_Movie"
                 sortOrder="30"
+                action="movie/director"
                 parent="Magenest_Movie::index"
                 resource="Magenest_Movie::director"
         />

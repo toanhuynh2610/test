@@ -1,12 +1,13 @@
 <?php
 namespace Magenest\Movie\Block\Adminhtml\Movie;
 
-use Magento\Search\Controller\RegistryConstants;
-
+use Magento\Framework\Registry;
+use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
+use Magento\Framework\View\Element\UiComponent\Context;
 /**
  * Class GenericButton
  */
-class GenericButton
+class GenericButton implements ButtonProviderInterface
 {
     /**
      * Url Builder
@@ -29,10 +30,10 @@ class GenericButton
      * @param \Magento\Framework\Registry $registry
      */
     public function __construct(
-        \Magento\Backend\Block\Widget\Context $context,
-        \Magento\Framework\Registry $registry
+        Context $context,
+        Registry $registry
     ) {
-        $this->urlBuilder = $context->getUrlBuilder();
+        $this->context = $context;
         $this->registry = $registry;
     }
 
@@ -43,8 +44,8 @@ class GenericButton
      */
     public function getId()
     {
-        $contact = $this->registry->registry('movie');
-        return $contact ? $contact->getId() : null;
+        $movie = $this->registry->registry('movie');
+        return $movie ? $movie->getId() : null;
     }
 
     /**
@@ -57,5 +58,9 @@ class GenericButton
     public function getUrl($route = '', $params = [])
     {
         return $this->urlBuilder->getUrl($route, $params);
+    }
+    public function getButtonData()
+    {
+        return [];
     }
 }
