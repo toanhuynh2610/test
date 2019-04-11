@@ -34,7 +34,7 @@
     <fieldset name="add_movie">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
-                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="collapsible" xsi:type="boolean">false</item>
                 <item name="label" xsi:type="string" translate="true">Add new movie</item>
                 <item name="sortOrder" xsi:type="number">20</item>
             </item>
@@ -69,6 +69,10 @@
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">movie</item>
                     <item name="dataScope" xsi:type="string">movie_rating</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-digits" xsi:type="boolean">true</item>
+                    </item>
+
                 </item>
             </argument>
         </field>
@@ -80,7 +84,11 @@
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">movie</item>
                     <item name="dataScope" xsi:type="string">movie_diector</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-digits" xsi:type="boolean">true</item>
+                    </item>
                 </item>
+
             </argument>
         </field>
     </fieldset>
