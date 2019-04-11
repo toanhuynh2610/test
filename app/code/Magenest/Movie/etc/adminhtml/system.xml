@@ -9,7 +9,7 @@
                  sortOrder="100" showInDefault="1" showInWebsite="1"
                  showInStore="1">
             <label>Movie</label>
-            <tab>magenest</tab>
+            <tab>magenest</tab>Mito2610
             <resource>Magenest_Movie::config_movie</resource>
             <group id="moviepage" translate="label" type="text"
                    sortOrder="1" showInDefault="1" showInWebsite="1"

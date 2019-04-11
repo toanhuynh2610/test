@@ -1,1 +1,1 @@
-Test
+Use app/coe/Magenest
