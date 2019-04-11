@@ -3,9 +3,9 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Magenest_Movie::magenest" title="Magenest">
+                <resource id="Magenest_Movie::movie_menu" title="Movie">
                     <resource id="Magenest_Movie::index" title="Index">
-                        <resource id="Magenest_Movie::movie" title="Movie"></resource>
+                        <resource id="Magenest_Movie::movie_submenu" title="Movie"></resource>
                         <resource id="Magenest_Movie::actor" title="Actor"></resource>
                         <resource id="Magenest_Movie::director" title="Director"></resource>
                     </resource>

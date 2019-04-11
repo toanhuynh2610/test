@@ -27,6 +27,6 @@ class Index extends \Magento\Backend\App\Action
     }
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Magenest_Movie::movie');
+        return $this->_authorization->isAllowed('Magenest_Movie::movie_submenu');
     }
 }
