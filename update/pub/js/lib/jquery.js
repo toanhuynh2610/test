@@ -991,11 +991,7 @@ function createInputPseudo( type ) {
 function createButtonPseudo( type ) {
 	return function( elem ) {
 		var name = elem.nodeName.toLowerCase();
-<<<<<<< HEAD
 		return (name === "input" || name === "button") && elem.type === type;
-=======
-		return (name === "input" || name === "Magenest.Movie.view.adminhtml.templates.system.config.button") && elem.type === type;
->>>>>>> 42eb8115f477a184a19a3c230f15d7e1ff27e6cf
 	};
 }
 
@@ -1949,11 +1945,7 @@ Expr = Sizzle.selectors = {
 
 		"button": function( elem ) {
 			var name = elem.nodeName.toLowerCase();
-<<<<<<< HEAD
 			return name === "input" && elem.type === "button" || name === "button";
-=======
-			return name === "input" && elem.type === "Magenest.Movie.view.adminhtml.templates.system.config.button" || name === "Magenest.Movie.view.adminhtml.templates.system.config.button";
->>>>>>> 42eb8115f477a184a19a3c230f15d7e1ff27e6cf
 		},
 
 		"text": function( elem ) {
@@ -5022,11 +5014,7 @@ if ( !support.submitBubbles ) {
 			jQuery.event.add( this, "click._submit keypress._submit", function( e ) {
 				// Node name check avoids a VML-related crash in IE (#9807)
 				var elem = e.target,
-<<<<<<< HEAD
 					form = jQuery.nodeName( elem, "input" ) || jQuery.nodeName( elem, "button" ) ? elem.form : undefined;
-=======
-					form = jQuery.nodeName( elem, "input" ) || jQuery.nodeName( elem, "Magenest.Movie.view.adminhtml.templates.system.config.button" ) ? elem.form : undefined;
->>>>>>> 42eb8115f477a184a19a3c230f15d7e1ff27e6cf
 				if ( form && !jQuery._data( form, "submitBubbles" ) ) {
 					jQuery.event.add( form, "submit._submit", function( event ) {
 						event._submit_bubble = true;

@@ -218,17 +218,10 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
   $.fn.button = function (option) {
     return this.each(function () {
       var $this   = $(this)
-<<<<<<< HEAD
       var data    = $this.data('bs.button')
       var options = typeof option == 'object' && option
 
       if (!data) $this.data('bs.button', (data = new Button(this, options)))
-=======
-      var data    = $this.data('Magenest.Movie.view.adminhtml.templates.system.config.button')
-      var options = typeof option == 'object' && option
-
-      if (!data) $this.data('Magenest.Movie.view.adminhtml.templates.system.config.button', (data = new Button(this, options)))
->>>>>>> 42eb8115f477a184a19a3c230f15d7e1ff27e6cf
 
       if (option == 'toggle') data.toggle()
       else if (option) data.setState(option)
@@ -250,11 +243,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
   // BUTTON DATA-API
   // ===============
 
-<<<<<<< HEAD
   $(document).on('click.bs.button.data-api', '[data-toggle^=button]', function (e) {
-=======
-  $(document).on('Magenest.Movie.view.adminhtml.templates.system.config.button.data-api', '[data-toggle^=button]', function (e) {
->>>>>>> 42eb8115f477a184a19a3c230f15d7e1ff27e6cf
     var $btn = $(e.target)
     if (!$btn.hasClass('btn')) $btn = $btn.closest('.btn')
     $btn.button('toggle')

@@ -19,6 +19,7 @@ class Collection extends \Magento\Framework\App\Action\Action {
 //            $output .= \Zend_Debug::dump($product["name"], null,
 //                false);
 //        }
+
         $this->getResponse()->setBody($output);
     }
 }

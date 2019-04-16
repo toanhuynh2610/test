@@ -5,9 +5,9 @@ class ChangePingToPong implements ObserverInterface
 {
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        if($observer->getText()== 'ping'){
-            $observer->setText('pong');
-        }
 
+        if($observer->getText()->getValue()== 'ping'){
+            $observer->getText()->setValue('pong');
+        }
     }
 }
