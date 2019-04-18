@@ -10,7 +10,7 @@ class Collection extends \Magento\Framework\App\Action\Action {
     public function execute() {
         $productCollection = $this->_objectManager
             ->create('Magenest\Movie\Model\ResourceModel\Movie\Collection')
-           // ->addAttributeToSelect('*')
+            //->addAttributeToSelect('*')
 //          ->addAttributeToFilter('name', array('like' => '%G%'))
             ->setPageSize(10,1);
         $output = '';

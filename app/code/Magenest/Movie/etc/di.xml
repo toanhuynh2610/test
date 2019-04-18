@@ -5,4 +5,17 @@
         <plugin name="Magenest_Movie::imageProduct"
                 type="Magenest\Movie\Plugin\Cart\ImageProduct" sortOrder="1" />
     </type>
+    <type name="Magenest\Movie\Model\ImageUploader">
+        <arguments>
+            <!-- Temporary file stored in pub/media/faq/tmp/icon -->
+            <argument name="baseTmpPath" xsi:type="string">movie/tmp/avatar</argument>
+            <argument name="basePath" xsi:type="string">movie/avatar</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

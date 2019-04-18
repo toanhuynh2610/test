@@ -17,7 +17,7 @@
     </argument>
     <dataSource name="movie_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Magenest\Movie\Model\DataProvider</argument>
+            <argument name="class" xsi:type="string">Magenest\Movie\Model\ResourceModel\Movie\DataProvider</argument>
             <argument name="name" xsi:type="string">movie_form_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">name</argument>
             <argument name="requestFieldName" xsi:type="string">name</argument>
