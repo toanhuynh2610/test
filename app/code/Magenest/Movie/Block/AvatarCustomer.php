@@ -25,10 +25,14 @@ class AvatarCustomer extends Template
         /*** @var \Magento\Customer\Model\Customer $customer ***/
         $customer = $objectManager->get('Magento\Customer\Model\Customer')->load($this->_currentCustomer->getCustomerId());
         $customerData = $customer->getData();
+        if(isset($customerData['avatar'])){
+            $store = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore();
+            $result = $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'movie/avatar/' . $customerData['avatar'];
+            return $result;
+        }
+//        else{
+//            $result = '';
+//        }
 
-        $store = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore();
-        $result = $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'movie/avatar/' . $customerData['avatar'];
-
-        return $result;
     }
 }
