@@ -22,7 +22,8 @@ class Save extends \Magento\Backend\App\Action
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();
-
+        var_dump($data);
+        exit();
 
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($data) {

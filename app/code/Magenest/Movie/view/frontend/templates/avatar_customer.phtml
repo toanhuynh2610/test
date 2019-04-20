@@ -1,0 +1,9 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get('Magento\Customer\Model\Session');
+if($customerSession->isLoggedIn()):
+    ?>
+    <div class="box-content">
+       <img style="height:175px;" src='<?php echo $block->getImage(); ?>'>
+    </div>
+<?php endif; ?>

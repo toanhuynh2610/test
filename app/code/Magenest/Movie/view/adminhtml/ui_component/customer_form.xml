@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
     <fieldset name="customer">
         <field name="avatar" sortOrder="40" formElement="fileUploader">
             <argument name="data" xsi:type="array">
@@ -17,10 +18,11 @@
                         <uploaderConfig>
                             <param xsi:type="url" name="url" path="movie/avatar_image/upload"/>
                         </uploaderConfig>
-                        <previewTmpl>Magento_Catalog/image-preview</previewTmpl>
+                       <previewTmpl>Magento_Catalog/image-preview</previewTmpl>
                     </settings>
                 </fileUploader>
             </formElements>
         </field>
     </fieldset>
+
 </form>

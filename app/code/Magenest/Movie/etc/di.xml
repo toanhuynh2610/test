@@ -7,7 +7,7 @@
     </type>
     <type name="Magenest\Movie\Model\ImageUploader">
         <arguments>
-            <!-- Temporary file stored in pub/media/faq/tmp/icon -->
+            <!-- Temporary file stored in pub/media/movie/tmp/avatar -->
             <argument name="baseTmpPath" xsi:type="string">movie/tmp/avatar</argument>
             <argument name="basePath" xsi:type="string">movie/avatar</argument>
             <argument name="allowedExtensions" xsi:type="array">
@@ -17,5 +17,10 @@
                 <item name="png" xsi:type="string">png</item>
             </argument>
         </arguments>
+    </type>
+    <preference for="Magento\Customer\Model\Backend\Customer" type="Magenest\Movie\Model\Customer"/>
+    <type name="Magento\Customer\Model\Customer\DataProvider">
+        <plugin name="Magenest_Movie::avatarCustomer"
+                type="Magenest\Movie\Plugin\Avatar\AvatarCustomer" sortOrder="1" />
     </type>
 </config>
