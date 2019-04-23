@@ -2,6 +2,8 @@
 
 namespace Magenest\Movie\Model\Eav\Backend;
 
+use Magento\Framework\App\Request\Http;
+
 /**
  * Catalog category image attribute backend model
  *
@@ -10,38 +12,18 @@ namespace Magenest\Movie\Model\Eav\Backend;
  */
 class AvatarCustomer extends \Magento\Eav\Model\Entity\Attribute\Backend\AbstractBackend
 {
-    /**
-     * @var \Magento\MediaStorage\Model\File\UploaderFactory
-     *
-     * @deprecated 101.0.0
-     */
+
     protected $_uploaderFactory;
 
-    /**
-     * @var \Magento\Framework\Filesystem
-     *
-     * @deprecated 101.0.0
-     */
     protected $_filesystem;
 
-    /**
-     * @var \Magento\MediaStorage\Model\File\UploaderFactory
-     *
-     * @deprecated 101.0.0
-     */
     protected $_fileUploaderFactory;
 
-    /**
-     * @var \Psr\Log\LoggerInterface
-     *
-     * @deprecated 101.0.0
-     */
     protected $_logger;
 
-    /**
-     * @var \Magento\Catalog\Model\ImageUploader
-     */
     private $imageUploader;
+
+//    protected $request;
 
     /**
      * @var string
@@ -56,11 +38,13 @@ class AvatarCustomer extends \Magento\Eav\Model\Entity\Attribute\Backend\Abstrac
     public function __construct(
         \Psr\Log\LoggerInterface $logger,
         \Magento\Framework\Filesystem $filesystem,
+//        \Magento\Framework\App\Request\Http $request,
         \Magento\MediaStorage\Model\File\UploaderFactory $fileUploaderFactory
     ) {
         $this->_filesystem = $filesystem;
         $this->_fileUploaderFactory = $fileUploaderFactory;
         $this->_logger = $logger;
+//        $this->request = $request;
     }
 
     /**
@@ -88,11 +72,11 @@ class AvatarCustomer extends \Magento\Eav\Model\Entity\Attribute\Backend\Abstrac
     {
         $attributeName = $this->getAttribute()->getName();
         $value = $object->getData($attributeName);
-
-        if ($imageName = $this->getUploadedImageName($value)) {
+        $imageName = $this->getUploadedImageName($value);
+        if ($imageName != null) {
             $object->setData($this->additionalData . $attributeName, $value);
             $object->setData($attributeName, $imageName);
-        } elseif (!is_string($value)) {
+        } else {
             $object->setData($attributeName, null);
         }
 

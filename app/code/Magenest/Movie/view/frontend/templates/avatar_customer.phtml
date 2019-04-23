@@ -3,8 +3,8 @@ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $customerSession = $objectManager->get('Magento\Customer\Model\Session');
 if($customerSession->isLoggedIn()):
     ?>
-    <?php $data = $customerSession->getData();
-         if(isset($data['avatar'])):
+    <?php
+         if($block->getImage()!=''):
         ?>
         <div class="box-content">
             <img style="height:175px;" src='<?php echo $block->getImage(); ?>'>

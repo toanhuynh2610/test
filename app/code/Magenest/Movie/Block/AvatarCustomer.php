@@ -30,9 +30,9 @@ class AvatarCustomer extends Template
             $result = $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'movie/avatar/' . $customerData['avatar'];
             return $result;
         }
-//        else{
-//            $result = '';
-//        }
+        else{
+            $result = '';
+        }
 
     }
 }
