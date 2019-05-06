@@ -43,5 +43,22 @@
                 parent="Magenest_Movie::index"
                 resource="Magenest_Movie::director"
         />
+        <add
+                id="Magenest_Movie::section"
+                title="Section"
+                module="Magenest_Movie"
+                sortOrder="20"
+                parent="Magenest_Movie::movie_menu"
+                resource="Magenest_Movie::section"
+        />
+        <add
+                id="Magenest_Movie::number"
+                title="Count number rows"
+                module="Magenest_Movie"
+                sortOrder="10"
+                action="movie/number"
+                parent="Magenest_Movie::section"
+                resource="Magenest_Movie::number"
+        />
     </menu>
 </config>

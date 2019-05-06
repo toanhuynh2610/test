@@ -23,7 +23,7 @@ class UpgradeData implements UpgradeDataInterface {
     }
     public function upgrade(ModuleDataSetupInterface $setup,
                             ModuleContextInterface $context) {
-        if (version_compare($context->getVersion(), '2.2.6') <
+        if (version_compare($context->getVersion(), '2.2.9') <
             0) {
                 /** @var CustomerSetup $customerSetup */
                 $attributeCode = 'avatar';
@@ -42,7 +42,7 @@ class UpgradeData implements UpgradeDataInterface {
                     'avatar', [
                         'label' => 'Avatar',
                         'type' => 'varchar',
-                        'frontend_input' => 'image',
+                        'input'=>'text',
                         'backend' => 'Magenest\Movie\Model\Eav\Backend\AvatarCustomer',
                         'required' => false,
                         'visible' => true,

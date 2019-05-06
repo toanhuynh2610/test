@@ -1,0 +1,39 @@
+<div class="col-m-6">
+    <h2>1st content container</h2>
+    <table class="admin__table-secondary" style="padding-right:30px;">
+        <tr>
+            <th><b><?php echo __('Number of Modules') ?></b></th>
+            <td><?php echo $block->getNumberOfModules(); ?></td>
+        </tr>
+        <tr>
+            <th><b><?php echo __('Number of Modules (Exclude Magento Vendor)') ?></b></th>
+            <td><?php echo $block->getNumberOfModulesNotMagento(); ?></td>
+        </tr>
+
+    </table>
+</div>
+<div class="col-m-6">
+    <h2>2nd content container</h2>
+    <table class="admin__table-secondary">
+        <tr>
+            <th><b><?php echo __('Number of Customers') ?></b></th>
+            <td><?php echo $block->getNumberOfCustomers(); ?></td>
+        </tr>
+        <tr>
+            <th><b><?php echo __('Number of Products') ?></b></th>
+            <td><?php echo $block->getNumberOfProducts(); ?></td>
+        </tr>
+        <tr>
+            <th><b><?php echo __('Number of Orders') ?></b></th>
+            <td><?php echo $block->getNumberOfOrders(); ?></td>
+        </tr>
+        <tr>
+            <th><b><?php echo __('Number of Invoices') ?></b></th>
+            <td><?php echo $block->getNumberOfInvoices(); ?></td>
+        </tr>
+        <tr>
+            <th><b><?php echo __('Number of CreditMemos') ?></b></th>
+            <td><?php echo $block->getNumberOfCreditmemos(); ?></td>
+        </tr>
+    </table>
+</div>

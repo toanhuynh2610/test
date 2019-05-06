@@ -9,7 +9,7 @@
   angular.module('clickOut', [])
   .directive('clickOut', ['$window', '$parse', function ($window, $parse) {
     return {
-      restrict: 'A',
+      restrict: 'Magenest.Movie.Model.Config.Source.A',
       link: function (scope, element, attrs) {
         var clickOutHandler = $parse(attrs.clickOut);
 

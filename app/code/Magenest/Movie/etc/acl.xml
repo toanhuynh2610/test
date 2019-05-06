@@ -9,6 +9,9 @@
                         <resource id="Magenest_Movie::actor" title="Actor"></resource>
                         <resource id="Magenest_Movie::director" title="Director"></resource>
                     </resource>
+                    <resource id="Magenest_Movie::section" title="Section">
+                        <resource id="Magenest_Movie::number" title="Number"></resource>
+                    </resource>
                 </resource>
                     <resource id="Magento_Backend::stores">
                         <resource id="Magento_Backend::stores_settings">

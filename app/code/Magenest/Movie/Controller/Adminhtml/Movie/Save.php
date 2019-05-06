@@ -1,24 +1,32 @@
 <?php
 namespace Magenest\Movie\Controller\Adminhtml\Movie;
 use Magenest\Movie\Model\Movie ;
+use Magento\Framework\App\Action\Context;
 
 class Save extends \Magento\Framework\App\Action\Action
 {
+    public function __construct(Context $context)
+    {
+        parent::__construct($context);
+    }
+
     public function execute()
     {
 
         $resultRedirect = $this->resultRedirectFactory->create();
         $data = $this->getRequest()->getPostValue();
-//        var_dump($data);
-//        exit();
+        unset($data['form_key']);
+
 
         if ($data) {
             try{
                 $movie = $this->_objectManager->create('Magenest\Movie\Model\Movie');
-                $movie->setName($data["movie_name"]);
-                $movie->setDescription($data["movie_description"]);
-                $movie->setRating($data["movie_rating"]);
-                $movie->setDirector_id($data["movie_diector"]);
+//                var_dump($data);die;
+                $movie->setData($data);
+//                $movie->setName($data["movie_name"]);
+//                $movie->setDescription($data["movie_description"]);
+//                $movie->setRating($data["movie_rating"]);
+//                $movie->setDirector_id($data["movie_diector"]);
                 $movie->save();
 
                 $this->_eventManager->dispatch(

@@ -1,12 +1,17 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magenest_Movie::css/rating.css"/>
+        <css src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" src_type="url"/>
+    </head>
     <body>
     <referenceContainer name="content">
-        <block class="Magenest\Movie\Block\Adminhtml\Movie" name="adminhtml.block.movie.movie.container">
-            <block class="Magenest\Movie\Block\Adminhtml\Movie\Grid"
-                   name="adminhtml.block.movie.movie.grid" as="grid" />
-        </block>
+<!--        <block class="Magenest\Movie\Block\Adminhtml\Movie" name="adminhtml.block.movie.movie.container">-->
+<!--            <block class="Magenest\Movie\Block\Adminhtml\Movie\Grid"-->
+<!--                   name="adminhtml.block.movie.movie.grid" as="grid" />-->
+<!--        </block>-->
+        <uiComponent name="movie_list"/>
     </referenceContainer>
     </body>
 </page>

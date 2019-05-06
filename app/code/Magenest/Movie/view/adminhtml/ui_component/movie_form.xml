@@ -17,10 +17,15 @@
     </argument>
     <dataSource name="movie_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Magenest\Movie\Model\ResourceModel\Movie\DataProvider</argument>
+            <argument name="class" xsi:type="string">Magenest\Movie\Model\ResourceModel\DataProvider</argument>
             <argument name="name" xsi:type="string">movie_form_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">name</argument>
             <argument name="requestFieldName" xsi:type="string">name</argument>
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="submit_url" xsi:type="url" path="movie/movie/save"/>-->
+<!--                </item>-->
+<!--            </argument>-->
         </argument>
         <argument name="data" xsi:type="array">
             <item name="js_config" xsi:type="array">
@@ -39,57 +44,48 @@
                 <item name="sortOrder" xsi:type="number">20</item>
             </item>
         </argument>
-        <field name="movie_name">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Movie Name</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">movie</item>
-                    <item name="dataScope" xsi:type="string">movie_name</item>
-                </item>
-            </argument>
+        <field name="name" formElement="input">
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Name</label>
+                <dataScope>name</dataScope>
+            </settings>
         </field>
-        <field name="movie_description">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Movie Description</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">movie</item>
-                    <item name="dataScope" xsi:type="string">movie_description</item>
-                </item>
-            </argument>
+        <field name="description" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Description</label>
+                <dataScope>description</dataScope>
+            </settings>
         </field>
-        <field name="movie_rating">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Movie Rating</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">movie</item>
-                    <item name="dataScope" xsi:type="string">movie_rating</item>
-                    <item name="validation" xsi:type="array">
-                        <item name="validate-digits" xsi:type="boolean">true</item>
-                    </item>
-
-                </item>
-            </argument>
+        <field name="rating" formElement="input">
+            <settings>
+                <validation>
+                    <rule name="validate-number" xsi:type="boolean">true</rule>
+                    <rule name="validate-digits-range" xsi:type="string">1-5</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Rating</label>
+                <dataScope>rating</dataScope>
+                <notice>Please input value from 1 to 5</notice>
+            </settings>
         </field>
-        <field name="movie_director">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Director ID</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">movie</item>
-                    <item name="dataScope" xsi:type="string">movie_diector</item>
-                    <item name="validation" xsi:type="array">
-                        <item name="validate-digits" xsi:type="boolean">true</item>
-                    </item>
-                </item>
-
-            </argument>
+        <field name="director_id" sortOrder="20" formElement="select">
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Director ID</label>
+                <dataScope>director_id</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Magenest\Movie\Model\Config\Source\Director"/>
+                    </settings>
+                </select>
+            </formElements>
         </field>
     </fieldset>
 </form>

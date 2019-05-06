@@ -379,7 +379,7 @@
             index--;
             digit = uid[index].charCodeAt(0);
             if (digit == 57 /*'9'*/) {
-                uid[index] = 'A';
+                uid[index] = 'Magenest.Movie.Model.Config.Source.A';
                 return uid.join('');
             }
             if (digit == 90  /*'Z'*/) {
@@ -5587,7 +5587,7 @@
                                     directive.index = index;
                                     directive.name = directive.name || name;
                                     directive.require = directive.require || (directive.controller && directive.name);
-                                    directive.restrict = directive.restrict || 'A';
+                                    directive.restrict = directive.restrict || 'Magenest.Movie.Model.Config.Source.A';
                                     directives.push(directive);
                                 } catch (e) {
                                     $exceptionHandler(e);
@@ -5775,7 +5775,7 @@
                         nodeName = nodeName_(this.$$element);
 
                         // sanitize a[href] and img[src] values
-                        if ((nodeName === 'A' && key === 'href') ||
+                        if ((nodeName === 'Magenest.Movie.Model.Config.Source.A' && key === 'href') ||
                             (nodeName === 'IMG' && key === 'src')) {
                             this[key] = value = $$sanitizeUri(value, key === 'src');
                         }
@@ -6061,7 +6061,7 @@
                                         attrs[nName] = true; // presence means true
                                     }
                                     addAttrInterpolateDirective(node, directives, value, nName);
-                                    addDirective(directives, nName, 'A', maxPriority, ignoreDirective, attrStartName,
+                                    addDirective(directives, nName, 'Magenest.Movie.Model.Config.Source.A', maxPriority, ignoreDirective, attrStartName,
                                         attrEndName);
                                 }
                             }
@@ -9999,7 +9999,7 @@
 
         isIdent: function(ch) {
             return ('a' <= ch && ch <= 'z' ||
-            'A' <= ch && ch <= 'Z' ||
+            'Magenest.Movie.Model.Config.Source.A' <= ch && ch <= 'Z' ||
             '_' === ch || ch === '$');
         },
 
@@ -19099,7 +19099,7 @@
             transclude: 'element',
             priority: 600,
             terminal: true,
-            restrict: 'A',
+            restrict: 'Magenest.Movie.Model.Config.Source.A',
             $$tlb: true,
             link: function ($scope, $element, $attr, ctrl, $transclude) {
                 var block, childScope, previousElements;

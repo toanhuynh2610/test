@@ -134,7 +134,7 @@ angular.module('create-admin-account', ['ngStorage'])
     .directive('confirmPassword', function() {
         return {
             require: 'ngModel',
-            restrict: 'A',
+            restrict: 'Magenest.Movie.Model.Config.Source.A',
             link: function (scope, elem, attrs, ctrl) {
                 scope.$watch(function () {
                     return scope.$eval(attrs.confirmPassword) === ctrl.$modelValue;
