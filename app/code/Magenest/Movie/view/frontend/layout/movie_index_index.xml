@@ -5,8 +5,9 @@
     </head>
     <body>
         <referenceContainer name="content">
-            <block class="Magenest\Movie\Block\ShowMovie"
-                   name="new_movie" template="Magenest_Movie::showmovie.phtml"/>
+<!--            <block class="Magenest\Movie\Block\ShowMovie"-->
+<!--                   name="new_movie" template="Magenest_Movie::showmovie.phtml"/>-->
+            <uiComponent name="movie_form"/>
         </referenceContainer>
     </body>
 </page>

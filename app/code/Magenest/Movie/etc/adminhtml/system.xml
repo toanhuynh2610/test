@@ -47,7 +47,6 @@
                        type="text" sortOrder="5" showInDefault="1"
                        showInWebsite="1" showInStore="1">
                     <label>Rows in table “actor_movie”</label>
-
                     <frontend_model>Magenest\Movie\Model\Config\Frontend\Disable</frontend_model>
                     <backend_model>Magenest\Movie\Model\Config\Backend\Actorrow</backend_model>
                 </field>

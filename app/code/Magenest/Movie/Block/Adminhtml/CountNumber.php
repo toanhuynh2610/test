@@ -28,10 +28,8 @@ class CountNumber extends Template
         $this->invoiceCollection = $invoiceCollection;
         $this->creditmemoCollection = $creditmemoCollection;
         parent::__construct($context, $data);
-
     }
     public function getNumberOfProducts(){
-
         $count =$this->productCollection->create()->count('*');
         return $count;
     }

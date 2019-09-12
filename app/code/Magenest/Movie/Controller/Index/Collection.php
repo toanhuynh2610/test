@@ -6,19 +6,30 @@
  * Time: 14:22
  */
 namespace Magenest\Movie\Controller\Index;
+use Magento\Framework\App\Action\Context;
+use Magenest\Movie\Model\ResourceModel\Rule\CollectionFactory;
 class Collection extends \Magento\Framework\App\Action\Action {
+    private $ruleFactory;
+    public function __construct(Context $context,CollectionFactory $ruleFactory)
+    {
+        $this->ruleFactory = $ruleFactory;
+        parent::__construct($context);
+    }
+
     public function execute() {
-        $productCollection = $this->_objectManager
-            ->create('Magenest\Movie\Model\ResourceModel\Movie\Collection')
-            //->addAttributeToSelect('*')
-//          ->addAttributeToFilter('name', array('like' => '%G%'))
-            ->setPageSize(10,1);
-        $output = '';
-        $output = $productCollection->count('*');
-//        foreach ($productCollection as $product) {
-//            $output .= \Zend_Debug::dump($product["name"], null,
-//                false);
-//        }
+
+//        $productCollection = $this->_objectManager
+//            ->create('Magento\Customer\Model\ResourceModel\Customer\Collection')
+//            ->addAttributeToSelect('*')
+////          ->addAttributeToFilter('entity_id', 2)
+//            ->setPageSize(10,1);
+               $output = '';
+////        $output = $productCollection->count('*');
+        $productCollection = $this->ruleFactory->create()->getItems();
+        foreach ($productCollection as $product) {
+            $output .= \Zend_Debug::dump($product->debug(), null,
+                false);
+        }
 
         $this->getResponse()->setBody($output);
     }

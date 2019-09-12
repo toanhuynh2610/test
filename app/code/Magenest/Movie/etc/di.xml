@@ -36,4 +36,13 @@
             <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\Movie</argument>
         </arguments>
     </virtualType>
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="coupon_code" xsi:type="string">sales_order.coupon_code</item>
+            </argument>
+        </arguments>
+    </virtualType>
+<!--    <preference for="Magento\Framework\Serialize\Serializer\Json" type="Magenest\Movie\Serialize\Serializer\Json" />-->
+    <preference for="Magento\Catalog\Ui\DataProvider\Product\ProductDataProvider" type="Magenest\Movie\Ui\DataProvider\Product\ProductDataProvider"/>
 </config>
